@@ -32,6 +32,7 @@
     "release": "gren release --override"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "better-scroll": "^1.15.2"
   },
   "devDependencies": {
