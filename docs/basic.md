@@ -24,7 +24,7 @@
     data() {
       return {
         url: 'https://www.easy-mock.com/mock/5cffa748dd1bd63aa02f2fe0/example/hello-1',
-        url1: 'https://www.easy-mock.com/mock/5cffa748dd1bd63aa02f2fe0/example/hello-2',
+        url1: 'https://www.easy-mock.com/mock/5cffa748dd1bd63aa02f2fe0/example/hello-1',
         url2: 'https://www.easy-mock.com/mock/5cffa748dd1bd63aa02f2fe0/example/hello-2'
       }
     },
