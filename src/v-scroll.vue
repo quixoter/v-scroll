@@ -84,6 +84,9 @@ export default {
       type: null,
       default: false
     },
+    /**
+     * 下拉刷新参数
+     */
     pullDownRefresh: {
       type: null,
       default: false

@@ -118,6 +118,7 @@
     overflow: hidden;
   }
   #dScroll {
+    padding: 0 500px;
     font-family: '微软雅黑', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

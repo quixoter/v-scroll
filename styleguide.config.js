@@ -59,6 +59,7 @@ module.exports = {
         }
       ]
     },
-    plugins: [new VueLoaderPlugin()]
+    plugins: [new VueLoaderPlugin()],
+    devServer: {disableHostCheck: true}
   }
 }
