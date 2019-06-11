@@ -1,8 +1,8 @@
 <template>
   <scroller
     ref="scroller"
-    :on-refresh="pullDownRefresh"
-    :on-infinite="pullUpLoad">
+    :on-refresh="onRefresh"
+    :on-infinite="onInfinite">
     <slot :list="thePage.list" :page="thePage"></slot>
   </scroller>
 </template>
@@ -21,23 +21,13 @@ export default {
   created() {},
   mounted() {},
   methods: {
-    /** 下拉刷新*/
-    async pullDownRefresh(done) {
-      console.log('pullDownRefresh')
-      this.thePage.number = this.thePage.defaultFirstPage
-      await this.fetchData()
+    async onRefresh(done) {
+      await this.pullDownRefresh()
       done()
     },
-    /** 上拉加载*/
-    async pullUpLoad(done) {
-      console.log('pullUpLoad')
-      if (this.thePage.list.length >= this.thePage.total) {
-        done(true)
-        return
-      }
-      await this.fetchData()
-      this.thePage.number++
-      done()
+    async onInfinite(done) {
+      let infiniteRes = await this.pullUpLoad()
+      done(infiniteRes)
     }
   },
   destroyed() {}

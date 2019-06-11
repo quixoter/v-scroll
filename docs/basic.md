@@ -16,7 +16,7 @@
     name: 'demoScroll',
     data() {
       return {
-        url: 'http://39.98.50.163:3000/mock/725/cdp-wy-activity-center/api/v1/activities/coupon/front/mine'
+        url: 'http://39.98.50.163:3000/mock/885/ly-cdp-wy-activity-center/api/v1/memberActivities/mine'
       }
     },
     mounted() {

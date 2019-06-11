@@ -49,6 +49,24 @@ export default {
       } else {
         this.thePage.list = this.thePage.list.concat(list)
       }
+      this.thePage.number++
+    },
+    /** 下拉刷新isFetchData: 是否请求数据(因为组件中将list清空后，可能存在自动触发加载方法的情况)*/
+    async pullDownRefresh(isFetchData = true) {
+      console.log('pullDownRefresh')
+      this.thePage.number = defaultFirstPage
+      // 这里清空list后会自动触发加载方法pullUpLoad，
+      // this.thePage.list = []
+      isFetchData && this.fetchData()
+    },
+    /** 上拉加载 (return true:数据已全部加载，false:当前滚动已完成，但数据未加载完)*/
+    async pullUpLoad() {
+      console.log('pullUpLoad')
+      if (this.thePage.list.length >= this.thePage.total) {
+        return true
+      }
+      await this.fetchData()
+      return false
     }
   },
   destroyed() {}
