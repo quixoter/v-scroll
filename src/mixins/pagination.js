@@ -76,5 +76,14 @@ export default {
       return false
     }
   },
+  watch: {
+    url: {
+      handler(val) {
+        this.thePage.number = defaultFirstPage
+        this.fetchData()
+      },
+      immediate: false
+    }
+  },
   destroyed() {}
 }
