@@ -26,6 +26,8 @@
 
 `v-scroll`组件 是基于 [vue-scroller](https://github.com/wangdahoo/vue-scroller) 封装的列表渲染组件
 
+[文档->](https://github.com/quixoter/v-scroll)
+
 ## Feature
 
 [⬆ Back to Top](#table-of-contents)
