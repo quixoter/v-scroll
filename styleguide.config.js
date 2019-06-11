@@ -21,7 +21,7 @@ module.exports = {
   ribbon: {
     url: 'https://github.com/quixoter/v-scroll'
   },
-  require: ['./styleguide/axios.js'],
+  require: ['./styleguide/axios.js', './styleguide/component.js'],
   sections: [
     {
       name: 'Components',
