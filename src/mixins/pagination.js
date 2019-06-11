@@ -1,9 +1,13 @@
 import _get from 'lodash/get'
+import {timeout} from '../utils/index.js'
 const dataPath = 'payload.content'
 const totalPath = 'payload.totalElements'
 const defaultFirstPage = 1
 const defaultPageSize = 10
+// 延迟时间ms
+const fetchDelay = 200
 
+/** 移动端分页数据处理逻辑*/
 export default {
   props: {
     /** 获取列表数据地址*/
@@ -42,22 +46,25 @@ export default {
       param[this.urlPageName] = this.thePage.number
       param[this.urlSizeName] = this.thePage.size
       let resp = await this.$axios.get(this.url, param)
+      // 手动延迟
+      await timeout(fetchDelay)
       this.thePage.total = _get(resp.data, this.totalPath, 0)
       let list = _get(resp.data, this.dataPath, [])
+
       if (this.thePage.number == defaultFirstPage) {
+        // 如果是第一页则重置
         this.thePage.list = list
       } else {
+        // 如果是大于第一页则合并数据
         this.thePage.list = this.thePage.list.concat(list)
       }
       this.thePage.number++
     },
-    /** 下拉刷新isFetchData: 是否请求数据(因为组件中将list清空后，可能存在自动触发加载方法的情况)*/
-    async pullDownRefresh(isFetchData = true) {
+    /** 下拉刷新*/
+    async pullDownRefresh() {
       console.log('pullDownRefresh')
       this.thePage.number = defaultFirstPage
-      // 这里清空list后会自动触发加载方法pullUpLoad，
-      // this.thePage.list = []
-      isFetchData && this.fetchData()
+      await this.fetchData()
     },
     /** 上拉加载 (return true:数据已全部加载，false:当前滚动已完成，但数据未加载完)*/
     async pullUpLoad() {

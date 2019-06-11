@@ -64,3 +64,5 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 [MIT](./LICENSE)
 
 [⬆ Back to Top](#table-of-contents)
+
+[⬆ Back to Top](#table-of-contents)

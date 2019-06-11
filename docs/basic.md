@@ -16,24 +16,13 @@
     name: 'demoScroll',
     data() {
       return {
-        url: 'http://39.98.50.163:3000/mock/885/ly-cdp-wy-activity-center/api/v1/memberActivities/mine'
+        url: 'http://39.98.50.163:3000/mock/885/ly-cdp-wy-activity-center/api/v1/memberActivities/mine_1560251455498',
+        url1: 'http://39.98.50.163:3000/mock/885/ly-cdp-wy-activity-center/api/v1/memberActivities/mine'
       }
     },
     mounted() {
     },
     methods: {
-      // 模拟数据请求
-      getData() {
-        return new Promise(resolve => {
-          setTimeout(() => {
-            const arr = []
-            for (let i = 0; i < 10; i++) {
-              arr.push(count++)
-            }
-            resolve(arr)
-          }, 1000)
-        })
-      }
     }
   }
 </script>
