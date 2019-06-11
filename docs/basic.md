@@ -23,9 +23,9 @@
     name: 'demoScroll',
     data() {
       return {
-        url: 'http://39.98.50.163:3000/mock/885/ly-cdp-wy-activity-center/api/v1/memberActivities/mine_1560251455498',
-        url1: 'http://39.98.50.163:3000/mock/885/ly-cdp-wy-activity-center/api/v1/memberActivities/mine_1560251455498',
-        url2: 'http://39.98.50.163:3000/mock/885/ly-cdp-wy-activity-center/api/v1/memberActivities/mine'
+        url: 'https://www.easy-mock.com/mock/5cffa748dd1bd63aa02f2fe0/example/hello-1',
+        url1: 'https://www.easy-mock.com/mock/5cffa748dd1bd63aa02f2fe0/example/hello-2',
+        url2: 'https://www.easy-mock.com/mock/5cffa748dd1bd63aa02f2fe0/example/hello-2'
       }
     },
     mounted() {
