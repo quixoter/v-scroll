@@ -10,11 +10,12 @@
 </template>
 
 <script>
+import Scroller from 'vue-scroller/src/components/Scroller.vue'
 import pagination from './mixins/pagination.js'
 export default {
   name: 'VScroll',
   inheritAttrs: false,
-  components: {},
+  components: {Scroller},
   mixins: [pagination],
   props: {},
   data() {
