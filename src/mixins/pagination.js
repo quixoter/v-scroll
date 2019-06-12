@@ -45,7 +45,7 @@ export default {
       let param = {}
       param[this.urlPageName] = this.thePage.number
       param[this.urlSizeName] = this.thePage.size
-      let resp = await this.$axios.get(this.url, param)
+      let resp = await this.$axios.get(this.url, {params: param})
       // 手动延迟
       await timeout(fetchDelay)
       this.thePage.total = _get(resp.data, this.totalPath, 0)
@@ -60,13 +60,13 @@ export default {
       }
       this.thePage.number++
     },
-    /** 下拉刷新*/
+    /** 刷新数据*/
     async pullDownRefresh() {
       console.log('pullDownRefresh')
       this.thePage.number = defaultFirstPage
       await this.fetchData()
     },
-    /** 上拉加载 (return true:数据已全部加载，false:当前滚动已完成，但数据未加载完)*/
+    /** 加载数据 (return true:数据已全部加载，false:当前滚动已完成，但数据未加载完)*/
     async pullUpLoad() {
       console.log('pullUpLoad')
       if (this.thePage.list.length >= this.thePage.total) {

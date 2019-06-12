@@ -24,10 +24,18 @@ export default {
   created() {},
   mounted() {},
   methods: {
+    /**
+     *下拉刷新触发
+     * @public
+     */
     async onRefresh(done) {
       await this.pullDownRefresh()
       done()
     },
+    /**
+     *滚动加载触发触发
+     * @public
+     */
     async onInfinite(done) {
       let infiniteRes = await this.pullUpLoad()
       done(infiniteRes)
